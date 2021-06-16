@@ -7,17 +7,6 @@
 
 #include "../include/fridge.h"
 
-void print_invalid(char **array)
-{
-    printf("'");
-    for (int x = 0; array[x] != NULL; x++) {
-        printf("%s", array[x]);
-        if (array[x+1] != NULL)
-            printf(" ");
-    }
-    printf("': Invalid operation\n");
-}
-
 void parse_command(char *command, fridge *cool)
 {
     char **array = my_str_to_word_array_line(command, ' ');
@@ -26,5 +15,7 @@ void parse_command(char *command, fridge *cool)
         if (addtofridge(array, cool) == -1)
             print_invalid(array);
     }
-
+    if (strcmp(array[0], "disp") == 0)
+        if(display_fridge(array, cool) == -1)
+            print_invalid(array);
 }

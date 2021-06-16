@@ -11,7 +11,7 @@ int addtofridge(char **array, fridge *cool)
 {
     int check = 0;
     if (!array || !cool)
-        return -1;
+        exit(84);
 
     if (array_size(array) != 3)
         return -1;
@@ -23,7 +23,7 @@ int addtofridge(char **array, fridge *cool)
             }
     }
     if (check == 0)
-        print_invalid(array);
+        return -1;
     return 0;
 }
 

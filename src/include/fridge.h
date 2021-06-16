@@ -30,5 +30,6 @@ void run_fridge(fridge *cool);
 void parse_command(char *command, fridge *cool);
 void print_invalid(char **array);
 int addtofridge(char **array, fridge *cool);
+int display_fridge(char **array, fridge *cool);
 
 #endif //BSQ_LIBRARY_H

@@ -14,7 +14,8 @@ SRC = src/main.c \
 	src/init/free.c \
 	src/runtime/loop.c \
 	src/runtime/parse_command.c \
-	src/runtime/addtofridge.c
+	src/runtime/addtofridge.c \
+	src/runtime/display.c
 
 OBJ = $(SRC:.c=.o)
 
