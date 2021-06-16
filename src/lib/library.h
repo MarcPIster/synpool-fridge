@@ -23,5 +23,5 @@ int is_num(char *str);
 char *read_file(char *filepath);
 char **my_str_to_word_array(char *str, char sep);
 int array_size(char **array);
-
+char **my_str_to_word_array_line(char *str, char sep);
 #endif //LIB_LIBRARY_H

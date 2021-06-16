@@ -51,7 +51,6 @@ fridge *init_fridge(void)
     char *content = read_file(".save");
 
     if (!content) {
-        printf("test\n");
         create_file(".save");
         output->food = init_food();
         return output;

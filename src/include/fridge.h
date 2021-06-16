@@ -26,5 +26,9 @@ typedef struct fridge {
 fridge *init_fridge(void);
 void check_input(int ac, char **av);
 ingredients **init_food_file(char *path);
+void run_fridge(fridge *cool);
+void parse_command(char *command, fridge *cool);
+void print_invalid(char **array);
+int addtofridge(char **array, fridge *cool);
 
 #endif //BSQ_LIBRARY_H

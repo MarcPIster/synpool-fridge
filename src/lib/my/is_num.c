@@ -11,7 +11,7 @@ int is_num(char *str)
 {
     if (!str)
         exit(84);
-    for (int i = 0; str[i]; i++)
+    for (int i = 0; str[i] != '\0' && str[i] != '\n'; i++)
         if (str[i] < '0' || str[i] > '9')
             return 0;
     return 1;

@@ -11,7 +11,10 @@ SRC = src/main.c \
 	src/init/init_fridge.c \
 	src/init/check_input.c \
 	src/init/init_food.c \
-	src/init/free.c
+	src/init/free.c \
+	src/runtime/loop.c \
+	src/runtime/parse_command.c \
+	src/runtime/addtofridge.c
 
 OBJ = $(SRC:.c=.o)
 
