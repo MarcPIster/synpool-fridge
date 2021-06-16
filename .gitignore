@@ -1,0 +1,7 @@
+cmake-build-debug
+fridge
+*.o
+*.a
+*.xml
+.idea
+CMakeLists.txt
