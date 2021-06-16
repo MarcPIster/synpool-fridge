@@ -9,6 +9,12 @@
 
 int main(int ac, char **av)
 {
-    my_putchar('c');
+    fridge *cool = NULL;
+    check_input(ac, av);
+    cool = init_fridge();
+
+
+    for (int x = 0; cool->food[x]; x++)
+        printf("%s = %i\n", cool->food[x]->name, cool->food[x]->stock);
     return 0;
 }

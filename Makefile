@@ -7,7 +7,11 @@
 
 CFLAGS = -g3 -W -Wall -Wextra -I./include
 
-SRC = src/main.c
+SRC = src/main.c \
+	src/init/init_fridge.c \
+	src/init/check_input.c \
+	src/init/init_food.c \
+	src/init/free.c
 
 OBJ = $(SRC:.c=.o)
 

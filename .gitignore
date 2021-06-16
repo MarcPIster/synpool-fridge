@@ -5,3 +5,4 @@ fridge
 *.xml
 .idea
 CMakeLists.txt
+.save

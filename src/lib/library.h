@@ -20,5 +20,8 @@ void my_swap(int *a, int *b);
 char *my_revstr(char *str);
 char *my_strcat(char *str1, char *str2);
 int is_num(char *str);
+char *read_file(char *filepath);
+char **my_str_to_word_array(char *str, char sep);
+int array_size(char **array);
 
 #endif //LIB_LIBRARY_H

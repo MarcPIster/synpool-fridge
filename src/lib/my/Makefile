@@ -13,7 +13,10 @@ SRC = my_putchar.c \
 	my_revstr.c \
 	my_strcat.c \
 	my_strlen.c \
-	my_swap.c
+	my_swap.c \
+	file_reading.c \
+	my_str_to_word_array.c \
+	array_size.c
 
 OBJ = $(SRC:.c=.o)
 
