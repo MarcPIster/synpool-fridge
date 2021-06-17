@@ -17,13 +17,36 @@ int count_lines(char *file)
     return count;
 }
 
+int valid_save(char *line)
+{
+    char **array = my_str_to_word_array(line, ' ');
+    char arr[8][8] =
+            { "tomato",
+              "dough",
+              "onion",
+              "pasta",
+              "olive",
+              "pepper",
+              "ham",
+              "cheese",
+            };
+    for (int x = 0; x < 8; x++) {
+        if (strcmp(array[0], arr[x]) == 0) {
+            free_array(array);
+            return 1;
+        }
+    }
+    free_array(array);
+    return 0;
+}
+
 ingredients *create_food_file(char *line)
 {
     ingredients *output = malloc(sizeof(ingredients));
     char **array = my_str_to_word_array(line, ' ');
     int size = 0;
 
-    if (array_size(array) != 3) {
+    if (array_size(array) != 3 || valid_save(line) == 0) {
         write(2, "False .save file\n", 17);
         exit(84);
     }
@@ -44,14 +67,13 @@ ingredients **init_food_file(char *path)
 
     char **array = my_str_to_word_array(file, '\n');
 
-    for (int x = 0; array[x] != NULL; x++)
-        output[x] = create_food_file(array[x]);
-
     if (n != 8) {
         write(2, "False .save file\n", 17);
         free(file);
         exit(84);
     }
+    for (int x = 0; array[x] != NULL; x++)
+        output[x] = create_food_file(array[x]);
     output[8] = NULL;
     free(file);
     free_array(array);
