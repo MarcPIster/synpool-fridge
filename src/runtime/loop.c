@@ -29,7 +29,7 @@ void run_fridge(fridge *cool)
         command = getuserinput();
         if (strcmp(command, "exit\n") == 0)
             break;
-        printf("%s", command); //raus nehmen
         parse_command(command, cool);
     }
+    free(command);
 }

@@ -9,6 +9,9 @@
 
 int give_right_output(char const *str, int max, int beginning)
 {
+
+    if (beginning <= 0)
+        return max;
     if (str[beginning - 1] == '-') {
         return max * (-1);
     } else {

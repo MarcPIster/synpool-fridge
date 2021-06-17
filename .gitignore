@@ -6,3 +6,4 @@ fridge
 .idea
 CMakeLists.txt
 .save
+*.dSYM

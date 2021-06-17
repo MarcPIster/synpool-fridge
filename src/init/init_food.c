@@ -59,7 +59,11 @@ ingredients **init_food_file(char *path)
 
     if (n != 8) {
         write(2, "False .save file\n", 17);
+        free(file);
         exit(84);
     }
+    output[8] = NULL;
+    free(file);
+    free_array(array);
     return output;
 }

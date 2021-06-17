@@ -53,8 +53,10 @@ fridge *init_fridge(void)
     if (!content) {
         create_file(".save");
         output->food = init_food();
+        free(content);
         return output;
     }
     output->food = init_food_file(".save");
+    free(content);
     return output;
 }

@@ -32,5 +32,7 @@ void print_invalid(char **array);
 int addtofridge(char **array, fridge *cool);
 int display_fridge(char **array, fridge *cool);
 int make_dinner(char **array, fridge *cool);
+void save_fridge(fridge *cool);
+void free_fridge(fridge *cool);
 
 #endif //BSQ_LIBRARY_H

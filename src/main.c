@@ -14,7 +14,7 @@ int main(int ac, char **av)
     cool = init_fridge();
 
     run_fridge(cool);
-    for (int x = 0; cool->food[x]; x++)
-        printf("%s = %i\n", cool->food[x]->name, cool->food[x]->stock);
+    save_fridge(cool);
+    free_fridge(cool);
     return 0;
 }

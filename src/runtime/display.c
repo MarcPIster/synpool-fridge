@@ -32,5 +32,14 @@ int display_fridge(char **array, fridge *cool)
     } else
         return -1;
     return 0;
+}
+
+void save_fridge(fridge *cool)
+{
+    FILE *ptr = fopen(".save", "wb");
+
+    for (int x = 0; cool->food[x]; x++)
+        fprintf(ptr, "%s = %i\n", cool->food[x]->name, cool->food[x]->stock);
+    fclose(ptr);
 
 }
