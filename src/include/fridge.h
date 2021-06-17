@@ -11,7 +11,7 @@
 #include "../lib/library.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <libc.h>
+#include <string.h>
 
 typedef struct ingredients {
     char *name;
@@ -34,5 +34,5 @@ int display_fridge(char **array, fridge *cool);
 int make_dinner(char **array, fridge *cool);
 void save_fridge(fridge *cool);
 void free_fridge(fridge *cool);
-
+void free_array(char **array);
 #endif //BSQ_LIBRARY_H

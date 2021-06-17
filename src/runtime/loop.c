@@ -24,7 +24,7 @@ void run_fridge(fridge *cool)
 {
     char *command = NULL;
 
-    while (TRUE) {
+    while (1) {
         free(command);
         command = getuserinput();
         if (strcmp(command, "exit\n") == 0)

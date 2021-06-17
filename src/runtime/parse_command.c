@@ -22,4 +22,6 @@ void parse_command(char *command, fridge *cool)
             print_invalid(array);
     } else
         print_invalid(array);
+
+    free(array);
 }

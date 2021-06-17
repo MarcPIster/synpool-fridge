@@ -7,6 +7,17 @@
 
 #include "../include/fridge.h"
 
+void free_array(char **array)
+{
+    for (int x = 0; array[x] != NULL; x++) {
+        free(array[x]);
+        array[x] = NULL;
+    }
+    free(array);
+    array = NULL;
+}
+
+
 void free_fridge(fridge *cool)
 {
     for (int x = 0; cool->food[x]; x++) {

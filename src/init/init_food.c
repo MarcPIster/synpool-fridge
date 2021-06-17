@@ -17,16 +17,6 @@ int count_lines(char *file)
     return count;
 }
 
-void free_array(char **array)
-{
-    for (int x = 0; array[x] != NULL; x++) {
-        free(array[x]);
-        array[x] = NULL;
-    }
-    free(array);
-    array = NULL;
-}
-
 ingredients *create_food_file(char *line)
 {
     ingredients *output = malloc(sizeof(ingredients));
