@@ -20,7 +20,12 @@ ingredients *create_food(char *name)
 {
     int size = my_strlen(name);
     ingredients *output = malloc(sizeof(ingredients));
+
+    if (!output)
+        exit(84);
     output->name = malloc(sizeof(char) * (size + 1));
+    if (!output->name)
+        exit(84);
     strcpy(output->name, name);
     output->name[size] = '\0';
     output->stock = 50;
@@ -28,10 +33,12 @@ ingredients *create_food(char *name)
 }
 
 
-
 ingredients **init_food(void)
 {
     ingredients **output = malloc(sizeof(ingredients *) * 9);
+
+    if (!output)
+        exit(84);
     output[0] = create_food("tomato");
     output[1] = create_food("dough");
     output[2] = create_food("onion");
@@ -50,6 +57,8 @@ fridge *init_fridge(void)
     fridge *output = malloc(sizeof(fridge));
     char *content = read_file(".save");
 
+    if (!output)
+        exit(84);
     if (!content) {
         create_file(".save");
         output->food = init_food();

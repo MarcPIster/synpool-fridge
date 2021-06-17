@@ -20,16 +20,11 @@ int count_lines(char *file)
 int valid_save(char *line)
 {
     char **array = my_str_to_word_array(line, ' ');
-    char arr[8][8] =
-            { "tomato",
-              "dough",
-              "onion",
-              "pasta",
-              "olive",
-              "pepper",
-              "ham",
-              "cheese",
-            };
+    char arr[8][8] = { "tomato", "dough", "onion", "pasta", "olive", \
+    "pepper", "ham", "cheese"};
+
+    if (!array)
+        exit(84);
     for (int x = 0; x < 8; x++) {
         if (strcmp(array[0], arr[x]) == 0) {
             free_array(array);
@@ -46,12 +41,16 @@ ingredients *create_food_file(char *line)
     char **array = my_str_to_word_array(line, ' ');
     int size = 0;
 
+    if (!array || !output)
+        exit(84);
     if (array_size(array) != 3 || valid_save(line) == 0) {
         write(2, "False .save file\n", 17);
         exit(84);
     }
     size = my_strlen(array[0]);
     output->name = malloc(sizeof(char) * size+1);
+    if (!output->name)
+        exit(84);
     strcpy(output->name, array[0]);
     output->name[size] = '\0';
     output->stock = my_getnbr(array[2]);
@@ -72,6 +71,8 @@ ingredients **init_food_file(char *path)
         free(file);
         exit(84);
     }
+    if (!output)
+        exit(84);
     for (int x = 0; array[x] != NULL; x++)
         output[x] = create_food_file(array[x]);
     output[8] = NULL;
