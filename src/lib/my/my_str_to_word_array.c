@@ -70,7 +70,6 @@ char **my_str_to_word_array(char *str, char sep)
     return output;
 }
 
-//if you want parse until '\n'
 char **my_str_to_word_array_line(char *str, char sep)
 {
     char **output = malloc_w(sizeof(char *) * (count_words(str, sep) + 1));

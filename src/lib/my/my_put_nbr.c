@@ -9,9 +9,9 @@
 
 int structurese_function_put_nbr(int counter, int temp)
 {
-    for (; counter >= 0 ; counter --){
+    for (; counter >= 0 ; counter--){
         int potenz = 1;
-        for (int temp_counter = counter; temp_counter > 0 ; temp_counter-- ){
+        for (int temp_counter = counter; temp_counter > 0; temp_counter--) {
             potenz = potenz * 10;
         }
         my_putchar((temp / potenz % 10) + 48);
@@ -33,10 +33,10 @@ int my_put_nbr(int nb)
     else if (nb > max || nb < (-1 * max)) {
         return -1;
     }
-    while ((nb - 10) >= 0){
+    while ((nb - 10) >= 0) {
         nb /= 10;
         counter++;
     }
-    structurese_function_put_nbr(counter,temp);
+    structurese_function_put_nbr(counter, temp);
     return 0;
 }

@@ -11,10 +11,6 @@
 #include <unistd.h>
 #include <string.h>
 
-// Input : Filepath of file to be read
-// Description : Reads file into malloced string
-// Output : File content // MUST BE FREED
-// Error : Returns NULL
 char *read_file(char *filepath)
 {
     int fd = open(filepath, O_RDONLY);

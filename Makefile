@@ -16,7 +16,9 @@ SRC = src/main.c \
 	src/runtime/parse_command.c \
 	src/runtime/addtofridge.c \
 	src/runtime/display.c \
-	src/runtime/make.c
+	src/runtime/make.c \
+	src/runtime/check_cooking.c \
+	src/runtime/cooking.c
 
 OBJ = $(SRC:.c=.o)
 

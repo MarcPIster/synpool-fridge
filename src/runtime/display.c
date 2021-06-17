@@ -41,5 +41,4 @@ void save_fridge(fridge *cool)
     for (int x = 0; cool->food[x]; x++)
         fprintf(ptr, "%s = %i\n", cool->food[x]->name, cool->food[x]->stock);
     fclose(ptr);
-
 }

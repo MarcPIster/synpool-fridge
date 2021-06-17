@@ -19,7 +19,6 @@ char *getuserinput(void)
     return line;
 }
 
-
 void run_fridge(fridge *cool)
 {
     char *command = NULL;

@@ -35,4 +35,9 @@ int make_dinner(char **array, fridge *cool);
 void save_fridge(fridge *cool);
 void free_fridge(fridge *cool);
 void free_array(char **array);
+int check_pizza(fridge *cool);
+int check_pasta(fridge *cool);
+void cook_pasta(fridge *cool);
+void cook_pizza(fridge *cool);
+void print_not_enough_pizza(const fridge *cool);
 #endif //BSQ_LIBRARY_H

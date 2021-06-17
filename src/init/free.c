@@ -17,7 +17,6 @@ void free_array(char **array)
     array = NULL;
 }
 
-
 void free_fridge(fridge *cool)
 {
     for (int x = 0; cool->food[x]; x++) {
